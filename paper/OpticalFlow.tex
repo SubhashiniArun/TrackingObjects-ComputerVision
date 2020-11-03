@@ -1,0 +1,59 @@
+\documentclass[]{article}
+\usepackage{biblatex}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{listings}
+\usepackage{selinput}
+
+\addbibresource{bib.bib}
+
+\title{Optical Flow with Convolutional Neural Networks}
+\author{Sean Batzel\\Subhashini Arunachalam\\Shyam Senthil Nathan}
+
+\begin{document}
+
+\maketitle
+\nocite{*}
+
+\pagebreak
+\begin{abstract}
+    Optical flow is a method of estimation of the relative positions or apparent motion of objects in subsequent frames.
+    There are a few methods of estimation of optical flow.
+    The paper cited here uses the Lucas-Kanade method and convolutional neural networks to calculate optical flow, with the goal of introducing a procedure for fine-tuning of convolutional neural networks for optical flow estimation.
+    There are a few areas of improvement, enumerated below, in the cited paper that we hope to address in our project.
+    In this work, we shall demonstrate improvements to these issues with the above paper’s standing process for processing optical flow with a convolutional neural network by employing the pyramidal approach to the Lucas-Kanade method.
+    We shall implement mini-batch gradient descent over the established stochastic gradient descent to further optimize the learning function employed by the paper and determine the process’ capacity to be trained by an animated scenario, rather than purely by real-life footage.
+    We shall finally test the performance and behavior benefits of an eigenvalue-based approach to the Lucas-Kanade method of optical flow tracking over the least square method.
+\end{abstract}
+
+\section{Introduction}\label{sec:introduction}
+
+\section{Related Work}\label{sec:related-work}
+A bachelor's thesis published in 2018 outlined a general procedure for using convolutional neural networks for computation of optical flow.\cite{flett}
+
+\section{Goals}\label{sec:goals}
+\subsection{Python Implementation}\label{subsec:python-implementation}
+The cited paper's implementation of the Lucas-Kanade optical flow algorithm was originally in Matlab.
+By using the Optical Flow assignment we completed for this course as a starting point, we reimplemented the Lucas-Kanade procedure in pure Python with numpy.
+This work is located in \verb|optical_flow.py|.
+
+\subsection{Pyramidal Lucas-Kanade}\label{subsec:pyramidal-lucas-kanade}
+\subsection{Mini-batch Gradient Descent}\label{subsec:mini-batch-gradient-descent}
+\subsection{Training on Animated Scenes}\label{subsec:training-on-animated-scenes}
+This didn't require any changes in the implementation itself.
+In testing the training process on animated input, all we needed was to select an animated scene, point out a feature to track, and feed the optical flow data through the neural network.
+
+\subsection{Eigenvalue-Based Optical Flow Computation}\label{subsec:eigenvalue-based-optical-flow-computation}
+
+\section{Method}\label{sec:method}
+
+\section{Result}\label{sec:result}
+
+\section{Conclusion}\label{sec:conclusion}
+
+\pagebreak
+\listoftables
+\listoffigures
+\printbibliography[heading=bibintoc]{}
+
+\end{document}
